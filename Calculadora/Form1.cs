@@ -25,40 +25,81 @@ namespace Calculadora
             txtNumero1.Text = "0";
             txtNumero2.Text = "0";
         }
+
+        // Sumar
         private void btnSumar_Click(object sender, EventArgs e)
         {
-            double n1 = Convert.ToDouble(txtNumero1.Text);
-            double n2 = Convert.ToDouble(txtNumero2.Text);
-            double r = n1 + n2;
-
-            label1.Text = r.ToString();
+            try
+            {
+                double n1 = Convert.ToDouble(txtNumero1.Text);
+                double n2 = Convert.ToDouble(txtNumero2.Text);
+                double r = n1 + n2;
+                label1.Text = r.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No puedes sumar un caracter alfabetico con un caracter númerico ");
+                throw;
+            }  
         }
 
+        // Restar
         private void btnRestar_Click(object sender, EventArgs e)
         {
-            double n1 = Convert.ToDouble(txtNumero1.Text);
-            double n2 = Convert.ToDouble(txtNumero2.Text);
-            double r = n1 - n2;
+            try
+            {
+                double n1 = Convert.ToDouble(txtNumero1.Text);
+                double n2 = Convert.ToDouble(txtNumero2.Text);
+                double r = n1 - n2;
 
-            label1.Text = r.ToString();
+                label1.Text = r.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No puedes restar un caracter alfabetico con un caracter númerico ");
+                throw;
+            }
         }
 
+        // Dividir
         private void btnDividir_Click(object sender, EventArgs e)
         {
-            double n1 = Convert.ToDouble(txtNumero1.Text);
-            double n2 = Convert.ToDouble(txtNumero2.Text);
-            double r = n1 / n2;
+            try
+            {
+                double n1 = Convert.ToDouble(txtNumero1.Text);
+                double n2 = Convert.ToDouble(txtNumero2.Text);
+                double r = n1 / n2;
 
-            label1.Text = r.ToString();
+                label1.Text = r.ToString();
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("No puedes dividir un caracter alfabetico con un caracter númerico ");
+                throw;
+            }
+            catch (DivideByZeroException ex)
+            {
+                MessageBox.Show("No se puede dividir por 0 ");
+                throw;
+            }
         }
 
+        // Multiplicar
         private void btnMultiplicar_Click(object sender, EventArgs e)
         {
-            double n1 = Convert.ToDouble(txtNumero1.Text);
-            double n2 = Convert.ToDouble(txtNumero2.Text);
-            double r = n1 * n2;
+            try
+            {
+                double n1 = Convert.ToDouble(txtNumero1.Text);
+                double n2 = Convert.ToDouble(txtNumero2.Text);
+                double r = n1 * n2;
 
-            label1.Text = r.ToString();
+                label1.Text = r.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No puedes multiplicar un caracter alfabetico con un caracter númerico ");
+                throw;
+            }
         }
     }
 }
